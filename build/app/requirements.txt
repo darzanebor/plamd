@@ -1,0 +1,7 @@
+json_log_formatter
+prometheus_client
+flask>=1.1.2
+gunicorn>=20
+Flask-WTF
+requests
+icmplib
