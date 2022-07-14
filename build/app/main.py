@@ -30,7 +30,7 @@ REQUEST_TIME = Summary("svc_request_processing_time", "Time spent processing req
 def child_exit(server, worker):
     """ multiprocess function for prometheus to track gunicorn """
     multiprocess.mark_process_dead(worker.pid)
-darzanebor-patch-1
+
 
 @app.route("/healthz", methods=["GET"])
 def default_healthz():
