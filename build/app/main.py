@@ -24,13 +24,13 @@ app.config["PLAMD_TIMEOUT"] = env.get("PLAMD_TIMEOUT", 1)
 app.config["PLAMD_INTERVAL"] = env.get("PLAMD_INTERVAL", 0.3)
 app.config["PLAMD_LIMIT_COUNT"] = int(env.get("PLAMD_LIMIT_COUNT", 16))
 
-REQUEST_TIME = Summary("plamd_request_processing_time", "Time spent processing request")
+REQUEST_TIME = Summary("svc_request_processing_time", "Time spent processing request")
 
 
 def child_exit(server, worker):
     """ multiprocess function for prometheus to track gunicorn """
     multiprocess.mark_process_dead(worker.pid)
-
+darzanebor-patch-1
 
 @app.route("/healthz", methods=["GET"])
 def default_healthz():
